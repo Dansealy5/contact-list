@@ -17,7 +17,8 @@ const selectedContact = ({ selectedContactId, setSelectedContactId }) => {
         }
         fetchUser()
     }, []);
-    return ( 
+    return (
+      <div>
         <table>
         <thead>
           <tr>
@@ -45,6 +46,11 @@ const selectedContact = ({ selectedContactId, setSelectedContactId }) => {
           </tr>
         </tbody>
       </table>
+        <button onClick={() => {
+        setSelectedContactId(null);
+        }}>Back
+        </button>
+      </div>
      );
 }
  
