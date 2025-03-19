@@ -1,17 +1,19 @@
 import { useState } from 'react'
 import './App.css'
+import Contactlist from './components/Contactlist'
+import SelectedContact from './components/SelectedContact'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [selectedContactId, setSelectedContactId] = useState(null)
   return (
     <>
-      <div>
-      </div>
-      <h1>Vite + React</h1>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    {selectedContactId ? (
+      <SelectedContact
+      selectedContactId={selectedContactId} />
+    ) : (
+      <Contactlist 
+      setSelectedContactId={setSelectedContactId}/>
+    )}
     </>
   )
 }
